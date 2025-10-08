@@ -1,7 +1,18 @@
+#!/usr/bin/env python3
 
+import sys
 from sky_remote import SkyRemote
 
-r = SkyRemote('192.168.0.66')
+if len(sys.argv) < 2:
+    print("Usage: server.py <sky_addr> [fifo_path]")
+    print("  sky_addr: IP address of Sky Q box (required)")
+    print("  fifo_path: Path to FIFO (default: /run/sky-remote/my_fifo)")
+    sys.exit(1)
+
+sky_addr = sys.argv[1]
+fifo_path = sys.argv[2] if len(sys.argv) > 2 else '/run/sky-remote/my_fifo'
+
+r = SkyRemote(sky_addr)
 
 def do_read(f):
 
@@ -22,10 +33,10 @@ def do_read(f):
 
 
 while True:
-  with open('my_fifo') as f:
+  with open(fifo_path) as f:
     do_read(f)
 
 
 
 print('sky remote server end')
-     
+
