@@ -107,7 +107,7 @@ Example: `192.168.0.66`
 
 ```bash
 sudo mkdir -p /run/sky-remote
-mkfifo /run/sky-remote/my_fifo
+mkfifo /run/sky-remote/fifo
 ```
 
 #### Start irexec:
@@ -203,14 +203,14 @@ mode2 -d /dev/lirc0  # or /dev/lirc1
 
 ```bash
 # Check FIFO exists
-ls -la /run/sky-remote/my_fifo
+ls -la /run/sky-remote/fifo
 
 # Check FIFO permissions
 # Should be prw-rw-rw- (named pipe, writable)
 
 # Manually recreate if needed
-sudo rm -f /run/sky-remote/my_fifo
-mkfifo -m 666 /run/sky-remote/my_fifo
+sudo rm -f /run/sky-remote/fifo
+mkfifo -m 666 /run/sky-remote/fifo
 ```
 
 ### Sky Q Box Not Responding

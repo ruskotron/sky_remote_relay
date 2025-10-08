@@ -6,11 +6,11 @@ from sky_remote import SkyRemote
 if len(sys.argv) < 2:
     print("Usage: server.py <sky_addr> [fifo_path]")
     print("  sky_addr: IP address of Sky Q box (required)")
-    print("  fifo_path: Path to FIFO (default: /run/sky-remote/my_fifo)")
+    print("  fifo_path: Path to FIFO (default: /run/sky-remote/fifo)")
     sys.exit(1)
 
 sky_addr = sys.argv[1]
-fifo_path = sys.argv[2] if len(sys.argv) > 2 else '/run/sky-remote/my_fifo'
+fifo_path = sys.argv[2] if len(sys.argv) > 2 else '/run/sky-remote/fifo'
 
 r = SkyRemote(sky_addr)
 

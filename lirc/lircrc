@@ -3,194 +3,194 @@ begin
     remote = skyq
     button = qpower
     prog   = irexec
-    config = echo power >> /run/sky-remote/my_fifo
+    config = echo power >> /run/sky-remote/fifo
 end
 
 begin
     remote = skyq
     button = qsearch
     prog   = irexec
-    config = echo search >> /run/sky-remote/my_fifo
+    config = echo search >> /run/sky-remote/fifo
 end
 
 begin
     remote = skyq
     button = qrew
     prog   = irexec
-    config = echo rewind >> /run/sky-remote/my_fifo
+    config = echo rewind >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = qplaypause
     prog   = irexec
-    config = echo play >> /run/sky-remote/my_fifo
+    config = echo play >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = qff
     prog   = irexec
-    config = echo fastforward >> /run/sky-remote/my_fifo
+    config = echo fastforward >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = qleft
     prog   = irexec
-    config = echo left >> /run/sky-remote/my_fifo
+    config = echo left >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = qup
     prog   = irexec
-    config = echo up >> /run/sky-remote/my_fifo
+    config = echo up >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = qright
     prog   = irexec
-    config = echo right >> /run/sky-remote/my_fifo
+    config = echo right >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = qdown
     prog   = irexec
-    config = echo down >> /run/sky-remote/my_fifo
+    config = echo down >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = qselect
     prog   = irexec
-    config = echo select >> /run/sky-remote/my_fifo
+    config = echo select >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = qback
     prog   = irexec
-    config = echo backup >> /run/sky-remote/my_fifo
+    config = echo backup >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = qhome
     prog   = irexec
-    config = echo home >> /run/sky-remote/my_fifo
+    config = echo home >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = qdotdotdot
     prog   = irexec
-    config = echo sidebar >> /run/sky-remote/my_fifo
+    config = echo sidebar >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = qinfo
     prog   = irexec
-    config = echo i >> /run/sky-remote/my_fifo
+    config = echo i >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = qchup
     prog   = irexec
-    config = echo channelup >> /run/sky-remote/my_fifo
+    config = echo channelup >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = qchdown
     prog   = irexec
-    config = echo channeldown >> /run/sky-remote/my_fifo
+    config = echo channeldown >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = qrecord
     prog   = irexec
-    config = echo record >> /run/sky-remote/my_fifo
+    config = echo record >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = qhelp
     prog   = irexec
-    config = echo help >> /run/sky-remote/my_fifo
+    config = echo help >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = qred
     prog   = irexec
-    config = echo red >> /run/sky-remote/my_fifo
+    config = echo red >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = qgreen
     prog   = irexec
-    config = echo green >> /run/sky-remote/my_fifo
+    config = echo green >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = qyellow
     prog   = irexec
-    config = echo yellow >> /run/sky-remote/my_fifo
+    config = echo yellow >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = qblue
     prog   = irexec
-    config = echo blur >> /run/sky-remote/my_fifo
+    config = echo blur >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = q0
     prog   = irexec
-    config = echo 0 >> /run/sky-remote/my_fifo
+    config = echo 0 >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = q1
     prog   = irexec
-    config = echo 1 >> /run/sky-remote/my_fifo
+    config = echo 1 >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = q2
     prog   = irexec
-    config = echo 2 >> /run/sky-remote/my_fifo
+    config = echo 2 >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = q3
     prog   = irexec
-    config = echo 3 >> /run/sky-remote/my_fifo
+    config = echo 3 >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = q4
     prog   = irexec
-    config = echo 4 >> /run/sky-remote/my_fifo
+    config = echo 4 >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = q5
     prog   = irexec
-    config = echo 5 >> /run/sky-remote/my_fifo
+    config = echo 5 >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = q6
     prog   = irexec
-    config = echo 6 >> /run/sky-remote/my_fifo
+    config = echo 6 >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = q7
     prog   = irexec
-    config = echo 7 >> /run/sky-remote/my_fifo
+    config = echo 7 >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = q8
     prog   = irexec
-    config = echo 8 >> /run/sky-remote/my_fifo
+    config = echo 8 >> /run/sky-remote/fifo
 end
 begin
     remote = skyq
     button = q9
     prog   = irexec
-    config = echo 9 >> /run/sky-remote/my_fifo
+    config = echo 9 >> /run/sky-remote/fifo
 end
 

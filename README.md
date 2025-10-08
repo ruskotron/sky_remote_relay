@@ -49,11 +49,17 @@ See [INSTALL.md](INSTALL.md) for detailed installation instructions.
 ### Manual Operation
 
 ```bash
-# Start irexec (captures IR and writes to FIFO)
+# Create FIFO in working directory
+mkfifo my_fifo
+
+# Start server with custom FIFO path (replace with your Sky Q IP)
+nohup python3 server.py 192.168.0.66 my_fifo >> server.log &
+
+# Start irexec (captures IR and writes to FIFO - requires lircrc configured)
 nohup irexec & tail -F nohup.out
 
-# Start server (replace with your Sky Q IP)
-nohup python3 server.py 192.168.0.66 >> server.log &
+# Or test manually with client
+python3 client.py power my_fifo
 ```
 
 ### Systemd Service (Recommended)

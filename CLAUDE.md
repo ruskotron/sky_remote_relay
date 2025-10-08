@@ -14,7 +14,7 @@ The solution was built during COVID lockdown when commercial IR extenders were u
 
 1. **IR Reception**: Physical Sky remote button press → IR receiver on Raspberry Pi Zero W (in living room)
 2. **LIRC Decoding**: `lircd` daemon decodes IR signals using `lirc/lircd.skyq.conf`
-3. **Command Mapping**: `irexec` maps decoded buttons via `lirc/lircrc` and writes command names to FIFO (`my_fifo`)
+3. **Command Mapping**: `irexec` maps decoded buttons via `lirc/lircrc` and writes command names to FIFO
 4. **Command Processing**: Python `server.py` reads from FIFO
 5. **Network Transmission**: Commands sent to Sky Q box via its LAN-based control API
 
@@ -42,7 +42,7 @@ Located in `lirc/` directory:
   - Configure which IR device to use based on your setup
 
 - **lircrc**: Maps IR button events to FIFO commands for `irexec`
-  - Each button (e.g., `qpower`) writes corresponding command (e.g., `power`) to `/home/pi/sky/sky-remote/my_fifo`
+  - Each button (e.g., `qpower`) writes corresponding command (e.g., `power`) to `/run/sky-remote/fifo`
   - Note: Line 134 has typo "blur" instead of "blue"
 
 ## Hardware Setup
@@ -86,4 +86,4 @@ Both processes run unattended indefinitely, designed to operate beyond the life 
 - Result: Dramatically improved responsiveness and proven stable in production
 
 ### FIFO Creation
-The named pipe is created during installation: `mkfifo /home/pi/sky/sky-remote/my_fifo`
+The named pipe is created during installation: `mkfifo /run/sky-remote/fifo`
