@@ -36,10 +36,10 @@ sudo apt-get install lirc python3 python3-pip
 pip3 install sky-remote
 
 # Clone repository
-sudo git clone https://github.com/ruskotron/sky_remote_relay /opt/sky-remote
+sudo git clone https://github.com/ruskotron/sky_remote_relay /opt/sky_remote_relay
 
 # Follow installation guide
-cat /opt/sky-remote/INSTALL.md
+cat /opt/sky_remote_relay/INSTALL.md
 ```
 
 See [INSTALL.md](INSTALL.md) for detailed installation instructions.

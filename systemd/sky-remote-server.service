@@ -7,8 +7,8 @@ Requires=sky-remote-irexec.service
 [Service]
 Type=simple
 User=pi
-WorkingDirectory=/opt/sky-remote
-ExecStart=/usr/bin/python3 /opt/sky-remote/server.py 192.168.0.66
+WorkingDirectory=/opt/sky_remote_relay
+ExecStart=/usr/bin/python3 /opt/sky_remote_relay/server.py 192.168.0.66
 Restart=on-failure
 RestartSec=5
 StandardOutput=append:/var/log/sky-remote/server.log

@@ -40,8 +40,8 @@ pip3 install .
 
 ```bash
 sudo mkdir -p /opt
-sudo git clone https://github.com/ruskotron/sky_remote_relay /opt/sky-remote
-cd /opt/sky-remote
+sudo git clone https://github.com/ruskotron/sky_remote_relay /opt/sky_remote_relay
+cd /opt/sky_remote_relay
 ```
 
 ### 2. Configure LIRC
@@ -119,7 +119,7 @@ irexec &
 #### Start the server (replace with your Sky Q IP):
 
 ```bash
-cd /opt/sky-remote
+cd /opt/sky_remote_relay
 python3 server.py 192.168.0.66
 ```
 
@@ -136,12 +136,12 @@ Point your physical Sky remote at the IR receiver and press buttons. You should 
 Update the Sky Q IP address in the server service file:
 
 ```bash
-sudo nano /opt/sky-remote/systemd/sky-remote-server.service
+sudo nano /opt/sky_remote_relay/systemd/sky-remote-server.service
 ```
 
 Change the `ExecStart` line to use your Sky Q box IP:
 ```ini
-ExecStart=/usr/bin/python3 /opt/sky-remote/server.py YOUR_SKY_Q_IP
+ExecStart=/usr/bin/python3 /opt/sky_remote_relay/server.py YOUR_SKY_Q_IP
 ```
 
 #### Install Service Files
@@ -233,7 +233,7 @@ sudo journalctl -xe
 ## Updating
 
 ```bash
-cd /opt/sky-remote
+cd /opt/sky_remote_relay
 sudo git pull
 sudo systemctl restart sky-remote-server.service
 sudo systemctl restart sky-remote-irexec.service
@@ -257,6 +257,6 @@ sudo rm /etc/lirc/lircd.conf.d/skyq.conf
 rm ~/.config/lirc/lircrc
 
 # Remove installation
-sudo rm -rf /opt/sky-remote
+sudo rm -rf /opt/sky_remote_relay
 sudo rm -rf /var/log/sky-remote
 ```
