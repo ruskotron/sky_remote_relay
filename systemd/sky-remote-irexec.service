@@ -7,8 +7,8 @@ Requires=lircd.service
 [Service]
 Type=simple
 User=pi
-RuntimeDirectory=sky-remote
-ExecStartPre=/usr/bin/mkfifo -m 666 /run/sky-remote/fifo
+RuntimeDirectory=sky_remote_relay
+ExecStartPre=/usr/bin/mkfifo -m 666 /run/sky_remote_relay/fifo
 ExecStart=/usr/bin/irexec
 Restart=on-failure
 RestartSec=5

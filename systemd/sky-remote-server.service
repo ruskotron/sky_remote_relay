@@ -11,8 +11,8 @@ WorkingDirectory=/opt/sky_remote_relay
 ExecStart=/usr/bin/python3 /opt/sky_remote_relay/server.py 192.168.0.66
 Restart=on-failure
 RestartSec=5
-StandardOutput=append:/var/log/sky-remote/server.log
-StandardError=append:/var/log/sky-remote/server.log
+StandardOutput=append:/var/log/sky_remote_relay/server.log
+StandardError=append:/var/log/sky_remote_relay/server.log
 
 [Install]
 WantedBy=multi-user.target

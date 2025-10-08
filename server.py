@@ -4,7 +4,7 @@ import sys
 from sky_remote import SkyRemote
 
 # Default configuration
-DEFAULT_FIFO_PATH = '/run/sky-remote/fifo'
+DEFAULT_FIFO_PATH = '/run/sky_remote_relay/fifo'
 
 if len(sys.argv) < 2:
     print("Usage: server.py <sky_addr> [fifo_path]")

@@ -42,7 +42,7 @@ Located in `lirc/` directory:
   - Configure which IR device to use based on your setup
 
 - **lircrc**: Maps IR button events to FIFO commands for `irexec`
-  - Each button (e.g., `qpower`) writes corresponding command (e.g., `power`) to `/run/sky-remote/fifo`
+  - Each button (e.g., `qpower`) writes corresponding command (e.g., `power`) to `/run/sky_remote_relay/fifo`
   - Note: Line 134 has typo "blur" instead of "blue"
 
 ## Hardware Setup
@@ -86,4 +86,4 @@ Both processes run unattended indefinitely, designed to operate beyond the life 
 - Result: Dramatically improved responsiveness and proven stable in production
 
 ### FIFO Creation
-The named pipe is created during installation: `mkfifo /run/sky-remote/fifo`
+The named pipe is created during installation: `mkfifo /run/sky_remote_relay/fifo`

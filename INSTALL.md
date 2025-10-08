@@ -106,8 +106,8 @@ Example: `192.168.0.66`
 #### Create FIFO manually for testing:
 
 ```bash
-sudo mkdir -p /run/sky-remote
-mkfifo /run/sky-remote/fifo
+sudo mkdir -p /run/sky_remote_relay
+mkfifo /run/sky_remote_relay/fifo
 ```
 
 #### Start irexec:
@@ -154,8 +154,8 @@ sudo cp systemd/sky-remote-server.service /etc/systemd/system/
 #### Create Log Directory
 
 ```bash
-sudo mkdir -p /var/log/sky-remote
-sudo chown pi:pi /var/log/sky-remote
+sudo mkdir -p /var/log/sky_remote_relay
+sudo chown pi:pi /var/log/sky_remote_relay
 ```
 
 #### Enable and Start Services
@@ -179,7 +179,7 @@ sudo systemctl status sky-remote-server.service
 
 ```bash
 # Server logs
-tail -f /var/log/sky-remote/server.log
+tail -f /var/log/sky_remote_relay/server.log
 
 # irexec logs
 journalctl -u sky-remote-irexec.service -f
@@ -203,14 +203,14 @@ mode2 -d /dev/lirc0  # or /dev/lirc1
 
 ```bash
 # Check FIFO exists
-ls -la /run/sky-remote/fifo
+ls -la /run/sky_remote_relay/fifo
 
 # Check FIFO permissions
 # Should be prw-rw-rw- (named pipe, writable)
 
 # Manually recreate if needed
-sudo rm -f /run/sky-remote/fifo
-mkfifo -m 666 /run/sky-remote/fifo
+sudo rm -f /run/sky_remote_relay/fifo
+mkfifo -m 666 /run/sky_remote_relay/fifo
 ```
 
 ### Sky Q Box Not Responding
@@ -258,5 +258,5 @@ rm ~/.config/lirc/lircrc
 
 # Remove installation
 sudo rm -rf /opt/sky_remote_relay
-sudo rm -rf /var/log/sky-remote
+sudo rm -rf /var/log/sky_remote_relay
 ```
