@@ -1,0 +1,17 @@
+[Unit]
+Description=Sky Remote LIRC irexec daemon
+Documentation=https://github.com/ruskotron/sky_remote_relay
+After=lircd.service
+Requires=lircd.service
+
+[Service]
+Type=simple
+User=pi
+RuntimeDirectory=sky-remote
+ExecStartPre=/usr/bin/mkfifo -m 666 /run/sky-remote/my_fifo
+ExecStart=/usr/bin/irexec
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

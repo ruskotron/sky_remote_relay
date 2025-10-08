@@ -1,0 +1,18 @@
+[Unit]
+Description=Sky Remote Relay Server
+Documentation=https://github.com/ruskotron/sky_remote_relay
+After=sky-remote-irexec.service
+Requires=sky-remote-irexec.service
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/opt/sky-remote
+ExecStart=/usr/bin/python3 /opt/sky-remote/server.py 192.168.0.66
+Restart=on-failure
+RestartSec=5
+StandardOutput=append:/var/log/sky-remote/server.log
+StandardError=append:/var/log/sky-remote/server.log
+
+[Install]
+WantedBy=multi-user.target
