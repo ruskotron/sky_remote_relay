@@ -37,6 +37,7 @@ pip3 install sky-remote
 
 # Clone repository
 sudo git clone https://github.com/ruskotron/sky_remote_relay /opt/sky_remote_relay
+sudo chown -R $USER:$USER /opt/sky_remote_relay
 
 # Follow installation guide
 cat /opt/sky_remote_relay/INSTALL.md

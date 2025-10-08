@@ -39,8 +39,8 @@ pip3 install .
 ### 1. Clone Repository
 
 ```bash
-sudo mkdir -p /opt
 sudo git clone https://github.com/ruskotron/sky_remote_relay /opt/sky_remote_relay
+sudo chown -R $USER:$USER /opt/sky_remote_relay
 cd /opt/sky_remote_relay
 ```
 
