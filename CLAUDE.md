@@ -48,7 +48,7 @@ Located in `lirc/` directory:
 ## Hardware Setup
 
 - **Raspberry Pi Zero W**: Chosen for low power, WiFi capability, and sufficient compute for this task
-- **IR Receiver Shield**: Pre-made shield for durability (replaces earlier flimsy breadboard prototype)
+- **IR Receiver HAT**: Pre-made HAT for durability (replaces earlier flimsy breadboard prototype)
 - **Colorful Case**: For living room presentation and family-proof deployment
 - **Dedicated Power Supply**: Neat power supply for visible placement
 
