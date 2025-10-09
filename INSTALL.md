@@ -125,7 +125,7 @@ irexec &
 
 ```bash
 cd /opt/sky_remote_relay
-python3 server.py 192.168.0.66
+python3 -u server.py 192.168.0.66
 ```
 
 #### Test with your Sky remote

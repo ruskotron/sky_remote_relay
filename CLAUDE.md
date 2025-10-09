@@ -96,9 +96,10 @@ Two-step process to run the service in background:
    - Runs irexec in background using nohup (persists beyond terminal session)
    - Tails output so status visible in terminal
 
-2. **Start server**: `nohup python3 server.py >> server.log &`
-   - Runs server.py in background, logging to server.log
+2. **Start server**: `nohup python3 -u server.py <sky_box_ip> >> server.log &`
+   - Runs server.py in background with unbuffered output, logging to server.log
    - Reads from FIFO and relays commands to Sky box
+   - The `-u` flag ensures immediate log output (Python normally buffers when writing to files)
 
 Both processes run unattended indefinitely, designed to operate beyond the life of the terminal session.
 

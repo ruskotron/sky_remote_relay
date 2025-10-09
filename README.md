@@ -70,7 +70,7 @@ See [INSTALL.md](INSTALL.md) for detailed installation instructions.
 mkfifo my_fifo
 
 # Start server with custom FIFO path (replace with your Sky box IP)
-nohup python3 server.py 192.168.0.66 my_fifo >> server.log &
+nohup python3 -u server.py 192.168.0.66 my_fifo >> server.log &
 
 # Start irexec (captures IR and writes to FIFO - requires lircrc configured)
 nohup irexec & tail -F nohup.out
