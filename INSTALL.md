@@ -100,11 +100,11 @@ irw
 # 0000000000000002 00 q1 skyq
 ```
 
-### 4. Find Your Sky Box IP Address
+### 4. Find Your Sky Box Address
 
-Find your Sky box's IP address from your router's DHCP table or Sky box settings menu.
+Find your Sky box's address from your router's DHCP table or Sky box settings menu. This can be an IP address or hostname.
 
-Example: `192.168.0.66`
+Example: `192.168.0.66` or `skybox.local`
 
 ### 5. Test Manual Operation
 
@@ -121,7 +121,7 @@ mkfifo /run/sky_remote_relay/fifo
 irexec &
 ```
 
-#### Start the server (replace with your Sky box IP):
+#### Start the server (replace with your Sky box address):
 
 ```bash
 cd /opt/sky_remote_relay
@@ -138,15 +138,15 @@ Point your physical Sky remote at the IR receiver and press buttons. You should 
 
 #### Edit Server Service
 
-Update the Sky box IP address in the server service file:
+Update the Sky box address in the server service file:
 
 ```bash
 sudo nano /opt/sky_remote_relay/systemd/sky-remote-server.service
 ```
 
-Change the `ExecStart` line to use your Sky box IP:
+Change the `ExecStart` line to use your Sky box address:
 ```ini
-ExecStart=/usr/bin/python3 /opt/sky_remote_relay/server.py YOUR_SKY_Q_IP
+ExecStart=/usr/bin/python3 -u /opt/sky_remote_relay/server.py YOUR_SKY_BOX_ADDRESS
 ```
 
 #### Install Service Files
@@ -220,9 +220,9 @@ mkfifo -m 666 /run/sky_remote_relay/fifo
 
 ### Sky Box Not Responding
 
-- Verify Sky box IP address is correct
+- Verify Sky box address is correct
 - Ensure Sky box and Pi are on same network
-- Test connectivity: `ping YOUR_SKY_BOX_IP`
+- Test connectivity: `ping YOUR_SKY_BOX_ADDRESS`
 - Check Sky box has network control enabled (should be default)
 
 ### Service Won't Start

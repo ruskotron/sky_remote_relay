@@ -30,7 +30,7 @@ I originally built this during the COVID-19 lockdown and couldn't get my hands o
 - **Low latency**: Dual-process FIFO architecture eliminates Python startup delay
 - **Auto-start**: Systemd service integration for unattended operation
 - **Battle-tested**: 4+ years of reliable production use
-- **Simple setup**: Single command-line parameter (Sky box IP address)
+- **Simple setup**: Single command-line parameter (Sky box address)
 
 ## Quick Start
 
@@ -69,7 +69,7 @@ See [INSTALL.md](INSTALL.md) for detailed installation instructions.
 # Create FIFO in working directory
 mkfifo my_fifo
 
-# Start server with custom FIFO path (replace with your Sky box IP)
+# Start server with custom FIFO path (replace with your Sky box address)
 nohup python3 -u server.py 192.168.0.66 my_fifo >> server.log &
 
 # Start irexec (captures IR and writes to FIFO - requires lircrc configured)

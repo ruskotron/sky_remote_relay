@@ -8,7 +8,7 @@ DEFAULT_FIFO_PATH = '/run/sky_remote_relay/fifo'
 
 if len(sys.argv) < 2:
     print("Usage: server.py <sky_addr> [fifo_path]")
-    print("  sky_addr: IP address of Sky box (required)")
+    print("  sky_addr: Address of Sky box (required)")
     print(f"  fifo_path: Path to FIFO (default: {DEFAULT_FIFO_PATH})")
     sys.exit(1)
 
