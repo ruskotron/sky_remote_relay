@@ -56,7 +56,6 @@ The solution was built during COVID lockdown when commercial IR extenders were u
 ### Python Modules
 
 - **server.py**: Reads commands from the named pipe (FIFO) and sends them to Sky box
-- **client.py**: Writes commands to the named pipe (for testing/scripting)
 - **sky_remote.py**: Sky network API protocol implementation (from [sky-remote](https://github.com/WoolDoughnut310/sky-remote) by WoolDoughnut310)
   - **Installation method**: Downloaded via curl directly from GitHub
   - **Why not pip?** The PyPI package is broken (missing source files)
@@ -120,3 +119,10 @@ Both processes run unattended indefinitely, designed to operate beyond the life 
 
 ### FIFO Creation
 The named pipe is created during installation: `mkfifo /run/sky_remote_relay/fifo`
+
+### Testing
+Manual testing can be done by writing directly to the FIFO:
+```bash
+echo "power" > /run/sky_remote_relay/fifo
+echo "channelup" > /run/sky_remote_relay/fifo
+```

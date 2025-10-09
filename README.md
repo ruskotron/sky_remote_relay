@@ -75,8 +75,8 @@ nohup python3 server.py 192.168.0.66 my_fifo >> server.log &
 # Start irexec (captures IR and writes to FIFO - requires lircrc configured)
 nohup irexec & tail -F nohup.out
 
-# Or test manually with client
-python3 client.py power my_fifo
+# Or test manually by writing to FIFO
+echo "power" > my_fifo
 ```
 
 ### Systemd Service (Recommended)
@@ -99,7 +99,6 @@ sudo systemctl start sky-remote-server.service
 ```
 sky_remote_relay/
 ├── server.py           # Reads FIFO and relays to Sky box
-├── client.py           # Test client for manual FIFO writes
 ├── lirc/               # LIRC configuration files
 │   ├── lircd.skyq.conf      # Sky IR remote codes
 │   └── lircrc               # irexec button mappings

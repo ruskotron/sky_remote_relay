@@ -6,27 +6,20 @@ from sky_remote import SkyRemote
 # Default configuration
 DEFAULT_FIFO_PATH = '/run/sky_remote_relay/fifo'
 
-# Module exports
-__all__ = ['DEFAULT_FIFO_PATH']
+if len(sys.argv) < 2:
+    print("Usage: server.py <sky_addr> [fifo_path]")
+    print("  sky_addr: IP address of Sky box (required)")
+    print(f"  fifo_path: Path to FIFO (default: {DEFAULT_FIFO_PATH})")
+    sys.exit(1)
 
-def init():
+sky_addr = sys.argv[1]
+fifo_path = sys.argv[2] if len(sys.argv) > 2 else DEFAULT_FIFO_PATH
 
-    if len(sys.argv) < 2:
-        print("Usage: server.py <sky_addr> [fifo_path]")
-        print("  sky_addr: IP address of Sky box (required)")
-        print(f"  fifo_path: Path to FIFO (default: {DEFAULT_FIFO_PATH})")
-        sys.exit(1)
+r = SkyRemote(sky_addr)
 
-    sky_addr = sys.argv[1]
-    fifo_path = sys.argv[2] if len(sys.argv) > 2 else DEFAULT_FIFO_PATH
+def do_read(f):
 
-    r = SkyRemote(sky_addr)
-
-    return r, fifo_path
-
-def do_read(r, f):
-
-      while True:
+    while True:
 
         l = f.readline()
         k = l.strip()
@@ -43,13 +36,8 @@ def do_read(r, f):
             # ah must be a non-int key
             r.press(k)
 
-if __name__ == "__main__":
+while True:
+    with open(fifo_path) as f:
+        do_read(f)
 
-    r, fifo_path = init()
-
-    while True:
-      with open(fifo_path) as f:
-        do_read(r, f)
-
-    print('sky remote server end')
-
+print('sky remote server end')
