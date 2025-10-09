@@ -42,7 +42,16 @@ cd /opt/sky_remote_relay
 # Install sky-remote library
 curl -o sky_remote.py https://raw.githubusercontent.com/WoolDoughnut310/sky-remote/main/sky_remote.py
 
-# Follow installation guide
+# Configure LIRC
+sudo cp lirc/lircd.skyq.conf /etc/lirc/lircd.conf.d/skyq.conf
+mkdir -p ~/.config/lirc
+cp lirc/lircrc ~/.config/lirc/lircrc
+sudo systemctl restart lircd
+
+# Test IR reception (press buttons on Sky remote)
+irw
+
+# Follow installation guide for complete setup
 cat INSTALL.md
 ```
 
