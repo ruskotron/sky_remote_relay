@@ -8,6 +8,8 @@ This project enables seamless control of a Sky box located remotely (e.g., in an
 
 I originally built this during the COVID-19 lockdown and couldn't get my hands on any off the shelf solutions. In the end, I think this has worked out to be a superior approach. This solution has seen active use for at least 4 years. It works reliably, with only a minor lag.
 
+**Compatibility**: Tested and working with Sky Q boxes. Should in principle work with any modern Sky+ or Sky HD box that supports the network control API.
+
 ## How It Works
 
 1. **IR Reception**: Physical Sky remote button press → IR receiver on Raspberry Pi Zero W

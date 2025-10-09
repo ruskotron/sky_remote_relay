@@ -8,6 +8,7 @@ This guide will help you set up the Sky Remote Relay on a Raspberry Pi Zero W (o
 - Power supply for Raspberry Pi (5V micro-USB)
 - IR receiver HAT/module connected to GPIO
 - Sky box on the same network
+  - **Compatibility**: Tested with Sky Q. Should work with any modern Sky+ or Sky HD box that supports network control API
 - Python 3.x installed
 
 ## IR Receiver Hardware

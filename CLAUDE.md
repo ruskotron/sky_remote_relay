@@ -43,6 +43,8 @@ This is a Python-based home automation project that enables seamless control of 
 
 The solution was built during COVID lockdown when commercial IR extenders were unavailable or unsatisfactory due to supply chain issues (Suez crisis). It has been in active, productive use for at least 4 years.
 
+**Compatibility**: Tested and working with Sky Q boxes. Should in principle work with any modern Sky+ or Sky HD box that supports the network control API.
+
 ## Architecture
 
 ### Complete Signal Flow
