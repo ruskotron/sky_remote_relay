@@ -72,7 +72,7 @@ See [INSTALL.md](INSTALL.md) for detailed installation instructions.
 mkfifo my_fifo
 
 # Start server with custom FIFO path (replace with your Sky box address)
-nohup python3 -u server.py 192.168.0.66 my_fifo >> server.log &
+nohup python3 -u sky_relay.py 192.168.0.66 my_fifo >> server.log &
 
 # Start irexec (captures IR and writes to FIFO - requires lircrc configured)
 nohup irexec & tail -F nohup.out
@@ -100,7 +100,7 @@ sudo systemctl start sky-remote-server.service
 
 ```
 sky_remote_relay/
-├── server.py           # Reads FIFO and relays to Sky box
+├── sky_relay.py        # Reads FIFO and relays to Sky box
 ├── lirc/               # LIRC configuration files
 │   ├── lircd.skyq.conf      # Sky IR remote codes
 │   └── lircrc               # irexec button mappings

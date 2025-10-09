@@ -52,12 +52,12 @@ The solution was built during COVID lockdown when commercial IR extenders were u
 1. **IR Reception**: Physical Sky remote button press → IR receiver on Raspberry Pi Zero W (in living room)
 2. **LIRC Decoding**: `lircd` daemon decodes IR signals using `lirc/lircd.skyq.conf`
 3. **Command Mapping**: `irexec` maps decoded buttons via `lirc/lircrc` and writes command names to FIFO
-4. **Command Processing**: Python `server.py` reads from FIFO
+4. **Command Processing**: Python `sky_relay.py` reads from FIFO
 5. **Network Transmission**: Commands sent to Sky box via its LAN-based control API
 
 ### Python Modules
 
-- **server.py**: Reads commands from the named pipe (FIFO) and sends them to Sky box
+- **sky_relay.py**: Reads commands from the named pipe (FIFO) and sends them to Sky box
 - **sky_remote.py**: Sky network API protocol implementation (from [sky-remote](https://github.com/WoolDoughnut310/sky-remote) by WoolDoughnut310)
   - **Installation method**: Downloaded via curl directly from GitHub
   - **Why not pip?** The PyPI package is broken (missing source files)
@@ -98,8 +98,8 @@ Two-step process to run the service in background:
    - Runs irexec in background using nohup (persists beyond terminal session)
    - Tails output so status visible in terminal
 
-2. **Start server**: `nohup python3 -u server.py <sky_box_ip> >> server.log &`
-   - Runs server.py in background with unbuffered output, logging to server.log
+2. **Start server**: `nohup python3 -u sky_relay.py <sky_box_ip> >> server.log &`
+   - Runs sky_relay.py in background with unbuffered output, logging to server.log
    - Reads from FIFO and relays commands to Sky box
    - The `-u` flag ensures immediate log output (Python normally buffers when writing to files)
 
@@ -117,7 +117,7 @@ Both processes run unattended indefinitely, designed to operate beyond the life 
 
 **Current Solution** (1.5 years ago): Dual-process FIFO IPC architecture implemented with surgical edits
 - irexec performs lightweight FIFO write (fast)
-- server.py stays running, only needs to read from FIFO (fast)
+- sky_relay.py stays running, only needs to read from FIFO (fast)
 - Result: Dramatically improved responsiveness and proven stable in production
 
 ### FIFO Creation

@@ -126,7 +126,7 @@ irexec &
 
 ```bash
 cd /opt/sky_remote_relay
-python3 -u server.py 192.168.0.66
+python3 -u sky_relay.py 192.168.0.66
 ```
 
 #### Test with your Sky remote
@@ -147,7 +147,7 @@ sudo nano /opt/sky_remote_relay/systemd/sky-remote-server.service
 
 Change the `ExecStart` line to use your Sky box address:
 ```ini
-ExecStart=/usr/bin/python3 -u /opt/sky_remote_relay/server.py YOUR_SKY_BOX_ADDRESS
+ExecStart=/usr/bin/python3 -u /opt/sky_remote_relay/sky_relay.py YOUR_SKY_BOX_ADDRESS
 ```
 
 #### Install Service Files
