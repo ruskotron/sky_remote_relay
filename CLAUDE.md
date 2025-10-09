@@ -35,12 +35,6 @@ Located in `lirc/` directory:
   - Modified for improved timing accuracy
   - Contains button definitions: qpower, qsearch, navigation (up/down/left/right), numbers (0-9), colors (red/green/yellow/blue), etc.
 
-- **lircd.skyq.conf-alt**: Alternative IR receiver configuration
-
-- **lirc_options.conf**: LIRC daemon options
-  - Key setting: `device = /dev/lirc1` (may need adjustment to `/dev/lirc0` depending on hardware)
-  - Configure which IR device to use based on your setup
-
 - **lircrc**: Maps IR button events to FIFO commands for `irexec`
   - Each button (e.g., `qpower`) writes corresponding command (e.g., `power`) to `/run/sky_remote_relay/fifo`
   - Note: Line 134 has typo "blur" instead of "blue"

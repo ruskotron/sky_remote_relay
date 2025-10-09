@@ -89,8 +89,6 @@ sky_remote_relay/
 ├── client.py           # Test client for manual FIFO writes
 ├── lirc/               # LIRC configuration files
 │   ├── lircd.skyq.conf      # Sky IR remote codes
-│   ├── lircd.skyq.conf-alt  # Alternative configuration
-│   ├── lirc_options.conf    # LIRC daemon options
 │   └── lircrc               # irexec button mappings
 ├── systemd/            # Systemd service files
 │   ├── sky-remote-irexec.service

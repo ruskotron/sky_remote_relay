@@ -47,22 +47,7 @@ Modern LIRC uses `/etc/lirc/lircd.conf.d/` for remote configurations:
 sudo cp lirc/lircd.skyq.conf /etc/lirc/lircd.conf.d/skyq.conf
 ```
 
-**Alternative configuration:** If the default doesn't work, try the alternate config:
-```bash
-sudo cp lirc/lircd.skyq.conf-alt /etc/lirc/lircd.conf.d/skyq.conf
-```
-
-#### Configure LIRC Options
-
-Check `/etc/lirc/lirc_options.conf` and adjust the `device` setting if needed:
-- Try `/dev/lirc0` or `/dev/lirc1` depending on your hardware
-- Use `mode2` to test which device receives IR signals
-
-Example configuration snippet:
-```ini
-[lircd]
-device = /dev/lirc1
-```
+**Note:** If you need to configure which IR device LIRC uses (`/dev/lirc0` vs `/dev/lirc1`), edit `/etc/lirc/lirc_options.conf` and adjust the `device` setting. Use `mode2` to test which device receives IR signals.
 
 #### Install irexec Configuration
 
