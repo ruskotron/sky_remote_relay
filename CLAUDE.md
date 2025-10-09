@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Python-based home automation project that enables seamless control of a Sky Q box located in an attic. It captures Sky Remote infrared signals in the living room and relays them over LAN to the Sky Q box's network API.
+This is a Python-based home automation project that enables seamless control of a Sky box located in an attic. It captures Sky Remote infrared signals in the living room and relays them over LAN to the Sky box's network API.
 
 The solution was built during COVID lockdown when commercial IR extenders were unavailable or unsatisfactory due to supply chain issues (Suez crisis). It has been in active, productive use for at least 4 years.
 
@@ -16,13 +16,13 @@ The solution was built during COVID lockdown when commercial IR extenders were u
 2. **LIRC Decoding**: `lircd` daemon decodes IR signals using `lirc/lircd.skyq.conf`
 3. **Command Mapping**: `irexec` maps decoded buttons via `lirc/lircrc` and writes command names to FIFO
 4. **Command Processing**: Python `server.py` reads from FIFO
-5. **Network Transmission**: Commands sent to Sky Q box via its LAN-based control API
+5. **Network Transmission**: Commands sent to Sky box via its LAN-based control API
 
 ### Python Modules
 
-- **server.py**: Reads commands from the named pipe (FIFO) and sends them to Sky Q box
+- **server.py**: Reads commands from the named pipe (FIFO) and sends them to Sky box
 - **client.py**: Writes commands to the named pipe (for testing/scripting)
-- **sky_remote.py**: Sky Q network API protocol implementation (thanks to sky-remote project)
+- **sky_remote.py**: Sky network API protocol implementation (from [sky-remote](https://github.com/WoolDoughnut310/sky-remote) by WoolDoughnut310)
 - **lirc.py**: LIRC interface utilities (if needed)
 - **fav_sky.py**: Favorite/preset Sky channel commands
 - **setup.py**: Package installation and configuration
@@ -31,7 +31,7 @@ The solution was built during COVID lockdown when commercial IR extenders were u
 
 Located in `lirc/` directory:
 
-- **lircd.skyq.conf**: IR receiver configuration defining all Sky Q remote button codes as raw IR timings
+- **lircd.skyq.conf**: IR receiver configuration defining all Sky remote button codes as raw IR timings
   - Modified for improved timing accuracy
   - Contains button definitions: qpower, qsearch, navigation (up/down/left/right), numbers (0-9), colors (red/green/yellow/blue), etc.
 
@@ -52,7 +52,7 @@ Located in `lirc/` directory:
 - **Colorful Case**: For living room presentation and family-proof deployment
 - **Dedicated Power Supply**: Neat power supply for visible placement
 
-No IR transmitter needed in the attic - Sky Q box has built-in LAN API.
+No IR transmitter needed in the attic - Sky box has built-in LAN API.
 
 ## Running the System
 
@@ -66,7 +66,7 @@ Two-step process to run the service in background:
 
 2. **Start server**: `nohup python3 server.py >> server.log &`
    - Runs server.py in background, logging to server.log
-   - Reads from FIFO and relays commands to Sky Q box
+   - Reads from FIFO and relays commands to Sky box
 
 Both processes run unattended indefinitely, designed to operate beyond the life of the terminal session.
 

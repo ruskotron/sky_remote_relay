@@ -7,7 +7,7 @@ This guide will help you set up the Sky Remote Relay on a Raspberry Pi Zero W (o
 - Raspberry Pi Zero W (or any Pi with WiFi)
 - IR receiver HAT/module connected to GPIO
 - LIRC installed and configured
-- Sky Q box on the same network
+- Sky box on the same network
 - Python 3.x installed
 
 ## Dependencies
@@ -16,22 +16,7 @@ This guide will help you set up the Sky Remote Relay on a Raspberry Pi Zero W (o
 
 ```bash
 sudo apt-get update
-sudo apt-get install lirc python3 python3-pip git
-```
-
-### Python Dependencies
-
-The `sky-remote` Python library is required:
-
-```bash
-pip3 install sky-remote
-```
-
-Or clone and install from source:
-```bash
-git clone https://github.com/RogerSelwyn/skyq_remote
-cd skyq_remote
-pip3 install .
+sudo apt-get install lirc python3 python3-pip git curl
 ```
 
 ## Installation Steps
@@ -44,7 +29,15 @@ sudo chown -R $USER:$USER /opt/sky_remote_relay
 cd /opt/sky_remote_relay
 ```
 
-### 2. Configure LIRC
+### 2. Install Python Dependencies
+
+Download the `sky-remote` library directly from GitHub:
+
+```bash
+curl -o sky_remote.py https://raw.githubusercontent.com/WoolDoughnut310/sky-remote/main/sky_remote.py
+```
+
+### 3. Configure LIRC
 
 #### Install LIRC Configuration Files
 
@@ -95,13 +88,13 @@ irw
 # 0000000000000002 00 q1 skyq
 ```
 
-### 3. Find Your Sky Q Box IP Address
+### 4. Find Your Sky Box IP Address
 
-Find your Sky Q box's IP address from your router's DHCP table or Sky Q settings menu.
+Find your Sky box's IP address from your router's DHCP table or Sky box settings menu.
 
 Example: `192.168.0.66`
 
-### 4. Test Manual Operation
+### 5. Test Manual Operation
 
 #### Create FIFO manually for testing:
 
@@ -116,7 +109,7 @@ mkfifo /run/sky_remote_relay/fifo
 irexec &
 ```
 
-#### Start the server (replace with your Sky Q IP):
+#### Start the server (replace with your Sky box IP):
 
 ```bash
 cd /opt/sky_remote_relay
@@ -127,19 +120,19 @@ python3 server.py 192.168.0.66
 
 Point your physical Sky remote at the IR receiver and press buttons. You should see:
 - Commands appearing in the server output
-- Your Sky Q box responding to the commands
+- Your Sky box responding to the commands
 
-### 5. Set Up Systemd Services (Automatic Start)
+### 6. Set Up Systemd Services (Automatic Start)
 
 #### Edit Server Service
 
-Update the Sky Q IP address in the server service file:
+Update the Sky box IP address in the server service file:
 
 ```bash
 sudo nano /opt/sky_remote_relay/systemd/sky-remote-server.service
 ```
 
-Change the `ExecStart` line to use your Sky Q box IP:
+Change the `ExecStart` line to use your Sky box IP:
 ```ini
 ExecStart=/usr/bin/python3 /opt/sky_remote_relay/server.py YOUR_SKY_Q_IP
 ```
@@ -213,12 +206,12 @@ sudo rm -f /run/sky_remote_relay/fifo
 mkfifo -m 666 /run/sky_remote_relay/fifo
 ```
 
-### Sky Q Box Not Responding
+### Sky Box Not Responding
 
-- Verify Sky Q box IP address is correct
-- Ensure Sky Q box and Pi are on same network
-- Test connectivity: `ping YOUR_SKY_Q_IP`
-- Check Sky Q box has network control enabled (should be default)
+- Verify Sky box IP address is correct
+- Ensure Sky box and Pi are on same network
+- Test connectivity: `ping YOUR_SKY_BOX_IP`
+- Check Sky box has network control enabled (should be default)
 
 ### Service Won't Start
 
