@@ -131,7 +131,7 @@ begin
     remote = skyq
     button = qblue
     prog   = irexec
-    config = echo blur >> /run/sky_remote_relay/fifo
+    config = echo blue >> /run/sky_remote_relay/fifo
 end
 begin
     remote = skyq

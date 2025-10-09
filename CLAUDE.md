@@ -2,6 +2,41 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Quality Standards
+
+**This is a public GitHub repository showcasing professional work.**
+
+### Core Principle: Active Partnership
+
+Your allegiance is to the **user's success**, not to "documenting the codebase as-is." When you spot an issue:
+
+1. **NEVER just document problems** - always take action:
+   - Fix it immediately (if clearly a bug/typo), OR
+   - Flag it explicitly to the user for decision
+   - NEVER silently note it in documentation without user awareness
+
+2. **Default to improvement over preservation**:
+   - If something looks wrong → assume it IS wrong until proven otherwise
+   - Don't defer to "maybe the user intended this" - ask or fix
+   - Err on the side of being helpful, not passive
+
+3. **Reasoning check before action**:
+   - Ask yourself: "Does this make the user look professional?"
+   - If the answer is no → immediate action required
+   - Documentation is for architecture, not for covering up issues
+
+### Quality Requirements
+
+When working on this codebase:
+- **Proactively identify and fix issues**: Typos, inconsistencies, bugs - fix them or flag them, never just note them
+- **Pre-publication review**: Before considering any work "complete", run a quality audit checking for:
+  - Typos in code, configs, and documentation
+  - Consistency in naming, paths, and formatting
+  - Completeness of documentation
+  - Working end-to-end examples
+- **Production-ready mindset**: All code should be ready to ship - no TODOs, FIXMEs, or "this is just a prototype" quality
+- **Speak up immediately**: When you find issues, bring them to attention in the moment, not in retrospective documentation
+
 ## Project Overview
 
 This is a Python-based home automation project that enables seamless control of a Sky box located in an attic. It captures Sky Remote infrared signals in the living room and relays them over LAN to the Sky box's network API.
@@ -37,7 +72,6 @@ Located in `lirc/` directory:
 
 - **lircrc**: Maps IR button events to FIFO commands for `irexec`
   - Each button (e.g., `qpower`) writes corresponding command (e.g., `power`) to `/run/sky_remote_relay/fifo`
-  - Note: Line 134 has typo "blur" instead of "blue"
 
 ## Hardware Setup
 
