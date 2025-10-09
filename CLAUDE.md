@@ -58,6 +58,11 @@ The solution was built during COVID lockdown when commercial IR extenders were u
 - **server.py**: Reads commands from the named pipe (FIFO) and sends them to Sky box
 - **client.py**: Writes commands to the named pipe (for testing/scripting)
 - **sky_remote.py**: Sky network API protocol implementation (from [sky-remote](https://github.com/WoolDoughnut310/sky-remote) by WoolDoughnut310)
+  - **Installation method**: Downloaded via curl directly from GitHub
+  - **Why not pip?** The PyPI package is broken (missing source files)
+  - **Why not fork?** The original has no license, so forking could undermine author's rights without their explicit permission
+  - **Why this library?** Simple, single-file module that works perfectly for the straightforward Sky Remote datagram protocol. Has been reliable for 4+ years.
+  - **Note**: This approach is appropriate for single-file modules and is how this library is used elsewhere
 - **lirc.py**: LIRC interface utilities (if needed)
 - **fav_sky.py**: Favorite/preset Sky channel commands
 - **setup.py**: Package installation and configuration

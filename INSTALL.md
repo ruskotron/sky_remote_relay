@@ -58,7 +58,7 @@ cd /opt/sky_remote_relay
 
 ### 2. Install Python Dependencies
 
-Download the `sky-remote` library directly from GitHub:
+Download the `sky-remote` library directly from GitHub (see Credits section in README for explanation of this installation method):
 
 ```bash
 curl -o sky_remote.py https://raw.githubusercontent.com/WoolDoughnut310/sky-remote/main/sky_remote.py

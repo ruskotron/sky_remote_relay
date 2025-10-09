@@ -43,7 +43,7 @@ sudo git clone https://github.com/ruskotron/sky_remote_relay /opt/sky_remote_rel
 sudo chown -R $USER:$USER /opt/sky_remote_relay
 cd /opt/sky_remote_relay
 
-# Install sky-remote library
+# Install sky-remote library (see Credits section for why we use curl)
 curl -o sky_remote.py https://raw.githubusercontent.com/WoolDoughnut310/sky-remote/main/sky_remote.py
 
 # Configure LIRC
@@ -114,6 +114,7 @@ sky_remote_relay/
 ## Credits
 
 - Sky network API protocol implementation: [sky-remote](https://github.com/WoolDoughnut310/sky-remote) by WoolDoughnut310
+  - **Note on installation method**: This single-file library is downloaded directly via curl rather than pip. The PyPI package is broken (missing source files), and forking was avoided to respect the author's rights (the repository has no license). This curl approach is appropriate for single-file modules, is how the library is used elsewhere, and has proven reliable over 4+ years of use. The Sky Remote datagram protocol is refreshingly simple and uncomplicated.
 - LIRC IR codes modified from configurations by Simon Walters
 
 ## License
