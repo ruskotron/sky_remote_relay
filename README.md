@@ -17,9 +17,13 @@ I originally built this during the COVID-19 lockdown and couldn't get my hands o
 
 ## Hardware Requirements
 
-- Raspberry Pi Zero W (or any Pi with WiFi)
-- IR receiver HAT/module
-- Sky box on the same network
+- **Raspberry Pi Zero W** (or any Pi with WiFi)
+- **Power supply** for Raspberry Pi (5V micro-USB)
+- **IR receiver HAT/module**
+  - Can be purchased pre-made from Amazon and other retailers
+  - Or built from scratch - see [LIRC documentation](http://lirc.org/html/schemas.html) and various online DIY projects
+  - Must be configured in LIRC to use the correct GPIO pin and `/dev/lirc` device
+- **Sky box** on the same network
 
 ## Key Features
 

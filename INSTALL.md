@@ -5,10 +5,37 @@ This guide will help you set up the Sky Remote Relay on a Raspberry Pi Zero W (o
 ## Prerequisites
 
 - Raspberry Pi Zero W (or any Pi with WiFi)
+- Power supply for Raspberry Pi (5V micro-USB)
 - IR receiver HAT/module connected to GPIO
-- LIRC installed and configured
 - Sky box on the same network
 - Python 3.x installed
+
+## IR Receiver Hardware
+
+You'll need an infrared receiver module connected to your Raspberry Pi's GPIO pins.
+
+### Option 1: Pre-fabricated HAT/Module (Recommended)
+
+Purchase a ready-made IR receiver HAT from:
+- Amazon, eBay, AliExpress (search "Raspberry Pi IR receiver HAT")
+- Electronics retailers (Adafruit, Pimoroni, etc.)
+
+These typically come pre-configured and include mounting hardware for easy installation.
+
+### Option 2: DIY Build
+
+Build your own IR receiver circuit:
+- Components needed: IR receiver module (e.g., TSOP38238, VS1838B), resistors, wires
+- Circuit diagrams available on:
+  - [LIRC Hardware Schemas](http://lirc.org/html/schemas.html)
+  - Various Raspberry Pi IR receiver tutorials online
+
+### Configuration
+
+After hardware installation:
+1. The IR receiver will typically appear as `/dev/lirc0` or `/dev/lirc1`
+2. Configure LIRC to use the correct device (covered in LIRC Configuration section below)
+3. Test reception with `mode2 -d /dev/lirc0` (or `/dev/lirc1`)
 
 ## Dependencies
 
